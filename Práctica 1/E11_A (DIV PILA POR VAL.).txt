@@ -1,0 +1,28 @@
+          ORG 1000H ; Datos
+DIVIDENDO DW 11
+DIVISOR	  DW 2
+RES       DW 0
+	
+          ORG 3000H  ; Subrutina
+DIV:      MOV BX,SP
+          ADD BX,2
+BUCLE:    CMP AX, BX
+ 	  JS FIN
+          SUB AX,BX
+	  INC CX
+          JMP BUCLE
+FIN:      RET
+          
+          ORG 2000H   ; Programa Principal
+          MOV AX, DIVIDENDO 
+          MOV BX, DIVISOR
+          MOV CX, RES
+	  PUSH AX
+	  PUSH BX
+	  PUSH CX
+	  CALL DIV
+	  POP CX
+	  POP BX
+	  POP AX
+  	  HLT
+    	  END

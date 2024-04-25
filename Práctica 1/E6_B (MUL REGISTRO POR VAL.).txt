@@ -1,0 +1,18 @@
+      org 1000h
+op1   db 12
+op2   db 5
+res   db 0
+
+      org 3000h
+MUL:  ADD CL, AH
+      DEC AL
+      JNZ MUL
+      RET
+
+      org 2000h
+      MOV AL, op1
+      MOV AH, op2
+      MOV CL, res
+      CALL MUL
+      HLT
+      END
