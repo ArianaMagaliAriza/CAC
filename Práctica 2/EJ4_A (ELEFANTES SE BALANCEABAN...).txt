@@ -1,0 +1,28 @@
+    ORG 1000H
+  MSJ DB "Ingrese un numero:"
+  FIN DB ?
+  MSJ2 DB " elefantes se balanceaban"
+  FIN2 DB?
+  NUM DB ?
+  
+      ORG 3000H
+SUBR: PUSH BX
+      PUSH AX
+      MOV AL,1
+      INT 7
+      MOV BX,OFFSET MSJ2
+      MOV AL, OFFSET FIN2 -OFFSET MSJ2
+      INT 7
+      POP AX
+      POP BX
+      RET
+      
+      ORG 2000H
+      MOV BX, OFFSET MSJ
+      MOV AL, OFFSET FIN -OFFSET MSJ
+      INT 7
+      MOV BX, OFFSET NUM
+      INT 6
+      CALL SUBR
+      INT 0
+      END
