@@ -1,2 +1,2 @@
 ** linguist-vendored
-*.asm linguist-vendored=false
+*.asm linguist-vendored=true
