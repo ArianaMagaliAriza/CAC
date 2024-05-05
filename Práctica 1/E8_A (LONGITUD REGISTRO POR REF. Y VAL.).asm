@@ -1,7 +1,7 @@
          org 1000h
 cadena db "cadena"
 res db 0
-
+hola
          org 3000h
 LONGITUD:MOV AH, [BX]
          CMP AH,00H
