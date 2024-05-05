@@ -1,5 +1,5 @@
-FORMA 1(MÁS INTERRUPCIONES MENOS MEMORIA OCUPADA)
--------------------------------------------------
+;FORMA 1(MÁS INTERRUPCIONES MENOS MEMORIA OCUPADA)
+;-------------------------------------------------
      ORG 1000H
   MSJ DB 0
   FIN DB 255
@@ -15,8 +15,8 @@ BUCLE:INT 7
       INT 0
       END
 
-FORMA 2(MÁS MEMORIA OCUPADA MENOS INTERRUPCIONES)
--------------------------------------------------
+;FORMA 2(MÁS MEMORIA OCUPADA MENOS INTERRUPCIONES)
+;-------------------------------------------------
      ORG 1000h
      msj db ?
 
